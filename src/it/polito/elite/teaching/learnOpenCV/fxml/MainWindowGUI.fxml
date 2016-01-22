@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane layoutX="0.0" layoutY="0.0" minHeight="600.0" minWidth="800.0" prefHeight="768.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <center>
+    <SplitPane fx:id="horizontalSplit" dividerPositions="0.839425587467363" focusTraversable="true" orientation="VERTICAL" prefHeight="-1.0" prefWidth="-1.0">
+      <items>
+        <SplitPane fx:id="verticalSplit" disable="false" dividerPositions="0.3303921568627451, 0.6588235294117647" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0">
+          <items>
+            <GridPane id="imgGrid" fx:id="imgViewGrid" gridLinesVisible="false" maxWidth="700.0" minHeight="610.0" minWidth="300.0" prefWidth="-1.0">
+              <children>
+                <HBox alignment="BOTTOM_RIGHT" minHeight="500.0" minWidth="1280.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="leftPanelBottom" translateZ="-10.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                  <children>
+                    <Line endX="0.0" endY="20.0" rotate="0.0" startX="0.0" startY="0.0" strokeWidth="3.0">
+                      <stroke>
+                        <Color blue="0.400" green="1.000" red="0.447" fx:id="x1" />
+                      </stroke>
+                    </Line>
+                    <Line endX="100.0" startX="-100.0" stroke="$x1" strokeDashOffset="0.0" strokeType="CENTERED" strokeWidth="3.0" />
+                  </children>
+                  <GridPane.margin>
+                    <Insets bottom="-3.0" />
+                  </GridPane.margin>
+                </HBox>
+                <HBox alignment="TOP_RIGHT" disable="false" fillHeight="true" focusTraversable="false" minHeight="500.0" minWidth="1280.0" prefHeight="-1.0" prefWidth="-1.0" styleClass="leftPanelTop" translateX="0.0" translateY="0.0" translateZ="0.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
+                  <children>
+                    <Line endX="0.0" endY="20.0" rotate="0.0" startX="0.0" startY="0.0" stroke="$x1" strokeWidth="3.0" />
+                    <Line endX="100.0" startX="-100.0" stroke="$x1" strokeDashOffset="0.0" strokeType="CENTERED" strokeWidth="3.0" />
+                  </children>
+                  <GridPane.margin>
+                    <Insets top="-3.0" />
+                  </GridPane.margin>
+                </HBox>
+                <GridPane id="GridPane" gridLinesVisible="true" minHeight="35.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                  <children>
+                    <HBox id="HBox" alignment="CENTER" minHeight="-1.0" spacing="5.0" styleClass="leftPanelCenter" translateZ="0.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                      <children>
+                        <Button fx:id="globalCompareButton" disable="true" mnemonicParsing="false" onAction="#compareFinalResult" text="Compare" />
+                      </children>
+                      <padding>
+                        <Insets fx:id="x3" />
+                      </padding>
+                      <GridPane.margin>
+                        <Insets fx:id="x3" />
+                      </GridPane.margin>
+                    </HBox>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <GridPane.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin>
+                </GridPane>
+                <GridPane gridLinesVisible="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                  <children>
+                    <GridPane alignment="TOP_CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                      <children>
+                        <ImageView fx:id="imgViewSrc" fitHeight="185.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                          <GridPane.margin>
+                            <Insets fx:id="x3" />
+                          </GridPane.margin>
+                        </ImageView>
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                    <HBox alignment="TOP_CENTER" prefHeight="-1.0" prefWidth="-1.0" spacing="4.0" translateZ="0.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                      <children>
+                        <Button mnemonicParsing="false" onAction="#loadImage" styleClass="blackButton" text="Load Image" translateZ="0.0" />
+                      </children>
+                      <GridPane.margin>
+                        <Insets top="4.0" />
+                      </GridPane.margin>
+                    </HBox>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints maxHeight="-1.0" minHeight="10.0" percentHeight="-1.0" prefHeight="2000.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+                <GridPane alignment="BOTTOM_CENTER" gridLinesVisible="false" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                  <children>
+                    <HBox alignment="BOTTOM_CENTER" prefHeight="-1.0" prefWidth="-1.0" spacing="4.0" translateZ="0.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
+                      <children>
+                        <Button fx:id="imgSaveButton" disable="true" mnemonicParsing="false" onAction="#saveImage" styleClass="blackButton" text="Save Image" translateZ="0.0">
+                          <HBox.margin>
+                            <Insets fx:id="x3" />
+                          </HBox.margin>
+                        </Button>
+                      </children>
+                      <padding>
+                        <Insets bottom="4.0" />
+                      </padding>
+                    </HBox>
+                    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                      <children>
+                        <ImageView id="imgDst" fx:id="imgViewDst" fitHeight="185.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                          <GridPane.margin>
+                            <Insets fx:id="x3" />
+                          </GridPane.margin>
+                        </ImageView>
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                    <RowConstraints minHeight="-1.0" percentHeight="-1.0" prefHeight="2000.0" vgrow="NEVER" />
+                  </rowConstraints>
+                </GridPane>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints fillWidth="true" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="200.0" percentWidth="100.0" prefWidth="-1.0" />
+              </columnConstraints>
+              <rotationAxis>
+                <Point3D y="1.0" />
+              </rotationAxis>
+              <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="-1.0" prefHeight="-1.0" valignment="TOP" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-1.0" prefHeight="-1.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints fillHeight="true" maxHeight="-1.0" prefHeight="-1.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+              </rowConstraints>
+            </GridPane>
+            <GridPane id="" alignment="TOP_LEFT" maxWidth="350.0" minWidth="270.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="6.0" styleClass="pipeEdges" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <children>
+                    <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#addBlock" prefHeight="-1.0" styleClass="blackButton" text="Add Block">
+                      <font>
+                        <Font size="15.0" fx:id="x2" />
+                      </font>
+                    </Button>
+                    <Button cancelButton="false" contentDisplay="TOP" defaultButton="false" disable="false" font="$x2" graphicTextGap="1.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#clearPipe" prefHeight="-1.0" styleClass="redButton" text="Clear All" visible="true" />
+                  </children>
+                  <GridPane.margin>
+                    <Insets top="-1.0" />
+                  </GridPane.margin>
+                </HBox>
+                <ListView fx:id="blocksPipeView" prefHeight="-1.0" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="6.0" styleClass="pipeEdges" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                  <children>
+                    <Button mnemonicParsing="false" onAction="#validatePipe" text="Check">
+                      <font>
+                        <Font size="14.0" fx:id="x6" />
+                      </font>
+                    </Button>
+                    <Button fx:id="executePipe" disable="false" mnemonicParsing="false" onAction="#executePipe" styleClass="greenButton" text="Execute">
+                      <font>
+                        <Font size="17.0" />
+                      </font>
+                    </Button>
+                    <Button id="" contentDisplay="TOP" disable="false" font="$x6" graphicTextGap="1.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#clearLog" prefHeight="-1.0" text="Clear Log" />
+                  </children>
+                </HBox>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-1.0" minWidth="-1.0" percentWidth="100.0" prefWidth="-1.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <TabPane fx:id="blockOptions" prefHeight="-1.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="1.7976931348623157E308">
+              <tabs>
+                <Tab closable="false" text="Info">
+                  <content>
+                    <ScrollPane id="blockControlsView" disable="false" fitToHeight="false" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxHeight="-1.0" maxWidth="-1.0" pannable="true" prefHeight="-1.0" prefWidth="-1.0" vbarPolicy="AS_NEEDED" visible="true">
+                      <content>
+                        <VBox id="blockControlsCollection" alignment="TOP_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+                          <children>
+                            <Label fx:id="blockDescription" alignment="CENTER" contentDisplay="CENTER" text="No block is selected" textAlignment="JUSTIFY" wrapText="true" VBox.vgrow="ALWAYS">
+                              <font>
+                                <Font size="12.0" fx:id="x5" />
+                              </font>
+                            </Label>
+                          </children>
+                          <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                          </padding>
+                        </VBox>
+                      </content>
+                    </ScrollPane>
+                  </content>
+                </Tab>
+                <Tab id="controls" fx:id="controlsTab" closable="false" disable="true" text="Controls">
+                  <content>
+                    <ScrollPane fx:id="blockControlsView" disable="false" fitToHeight="false" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxHeight="-1.0" maxWidth="-1.0" pannable="true" prefHeight="-1.0" prefWidth="-1.0" vbarPolicy="AS_NEEDED" visible="true">
+                      <content>
+                        <VBox fx:id="blockControlsCollection" alignment="TOP_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+                          <children>
+                            <GridPane fx:id="blockControlsGrid" gridLinesVisible="false" hgap="5.0" vgap="10.0">
+                              <columnConstraints>
+                                <ColumnConstraints fillWidth="true" halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="10.0" prefWidth="40.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="-1.0" />
+                              </columnConstraints>
+                              <padding>
+                                <Insets left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                              <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                            </GridPane>
+                          </children>
+                          <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                          </padding>
+                        </VBox>
+                      </content>
+                    </ScrollPane>
+                  </content>
+                </Tab>
+                <Tab id="details" fx:id="detailsTab" closable="false" disable="true" text="Details">
+                  <content>
+                    <GridPane fx:id="blockDetailsView" maxWidth="1.7976931348623157E308" minWidth="200.0" prefWidth="400.0">
+                      <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                          <children>
+                            <Polygon rotate="90.0" scaleX="1.4" scaleY="1.4" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                              <fill>
+                                <Color blue="0.624" green="0.624" red="0.624" fx:id="x4" />
+                              </fill>
+                              <points>
+                                <Double fx:value="-5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="0.0" />
+                                <Double fx:value="-6.0" />
+                              </points>
+                              <HBox.margin>
+                                <Insets left="15.0" right="17.0" />
+                              </HBox.margin>
+                            </Polygon>
+                            <Polygon rotate="90.0" scaleX="1.25" scaleY="1.25" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                              <fill>
+                                <Color blue="0.376" green="0.376" red="0.376" fx:id="x8" />
+                              </fill>
+                              <points>
+                                <Double fx:value="-5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="0.0" />
+                                <Double fx:value="-6.0" />
+                              </points>
+                              <HBox.margin>
+                                <Insets right="17.0" />
+                              </HBox.margin>
+                            </Polygon>
+                            <Polygon fill="BLACK" rotate="90.0" scaleX="1.1" scaleY="1.1" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                              <points>
+                                <Double fx:value="-5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="0.0" />
+                                <Double fx:value="-6.0" />
+                              </points>
+                              <HBox.margin>
+                                <Insets right="15.0" />
+                              </HBox.margin>
+                            </Polygon>
+                            <Label alignment="CENTER" contentDisplay="CENTER" text="Last INPUT for this Block" textAlignment="CENTER" underline="false">
+                              <font>
+                                <Font name="System Bold" size="16.0" fx:id="x7" />
+                              </font>
+                              <HBox.margin>
+                                <Insets bottom="2.0" top="2.0" />
+                              </HBox.margin>
+                            </Label>
+                          </children>
+                          <GridPane.margin>
+                            <Insets fx:id="x3" />
+                          </GridPane.margin>
+                        </HBox>
+                        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                          <children>
+                            <ImageView id="blockImgSrc" fx:id="blockImgViewIn" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <GridPane id="GridPane" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                          <children>
+                            <Button fx:id="localCompareButton" disable="true" mnemonicParsing="false" onAction="#compareLocalResult" text="Compare" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                              <GridPane.margin>
+                                <Insets bottom="3.0" top="3.0" />
+                              </GridPane.margin>
+                            </Button>
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="-1.0" percentWidth="33.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-1.0" minWidth="-1.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="-1.0" percentWidth="33.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="-1.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="3">
+                          <children>
+                            <ImageView id="blockImgDst" fx:id="blockImgViewOut" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                          <children>
+                            <Polygon fill="$x4" rotate="-90.0" scaleX="1.4" scaleY="1.4" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                              <points>
+                                <Double fx:value="-5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="0.0" />
+                                <Double fx:value="-6.0" />
+                              </points>
+                              <HBox.margin>
+                                <Insets left="15.0" right="17.0" />
+                              </HBox.margin>
+                            </Polygon>
+                            <Polygon fill="$x8" rotate="-90.0" scaleX="1.25" scaleY="1.25" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                              <points>
+                                <Double fx:value="-5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="0.0" />
+                                <Double fx:value="-6.0" />
+                              </points>
+                              <HBox.margin>
+                                <Insets right="17.0" />
+                              </HBox.margin>
+                            </Polygon>
+                            <Polygon fill="BLACK" rotate="-90.0" scaleX="1.1" scaleY="1.1" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                              <points>
+                                <Double fx:value="-5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="5.0" />
+                                <Double fx:value="4.0" />
+                                <Double fx:value="0.0" />
+                                <Double fx:value="-6.0" />
+                              </points>
+                              <HBox.margin>
+                                <Insets right="15.0" />
+                              </HBox.margin>
+                            </Polygon>
+                            <Label alignment="CENTER" contentDisplay="CENTER" font="$x7" text="Last OUTPUT for this Block" textAlignment="CENTER" underline="false">
+                              <HBox.margin>
+                                <Insets bottom="2.0" top="2.0" />
+                              </HBox.margin>
+                            </Label>
+                          </children>
+                          <GridPane.margin>
+                            <Insets fx:id="x3" />
+                          </GridPane.margin>
+                        </HBox>
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="200.0" percentWidth="100.0" prefWidth="400.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="293.5" minHeight="10.0" percentHeight="-1.0" prefHeight="293.5" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="293.5" minHeight="10.0" percentHeight="-1.0" prefHeight="293.5" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                  </content>
+                </Tab>
+                <Tab id="code" closable="false" text="Code">
+                  <content>
+                    <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
+                      <content>
+                        <TextArea fx:id="blockCodeView" editable="false" focusTraversable="true" maxWidth="-1.0" prefWidth="-1.0" text="Code unavailable.&#10;Please perform a successful execution first and a valid code will be rendered." visible="true" wrapText="false" />
+                      </content>
+                    </ScrollPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+          </items>
+        </SplitPane>
+        <GridPane gridLinesVisible="false">
+          <children>
+            <TextArea fx:id="logArea" disable="false" editable="false" maxHeight="400.0" minHeight="-1.0" prefHeight="50.0" prefRowCount="10" prefWidth="-1.0" style="-fx-font-size: 13;" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+          </padding>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </items>
+    </SplitPane>
+  </center>
+</BorderPane>

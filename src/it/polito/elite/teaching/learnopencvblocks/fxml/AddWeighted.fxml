@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" fx:id="GUIelement" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox fx:id="control" layoutX="14.0" layoutY="14.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Weight of the first image:" />
+        <TextField fx:id="weight" prefWidth="48.0">
+          <tooltip>
+            <Tooltip text="weight of the first array elements" />
+          </tooltip>
+        </TextField>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="267.0" layoutY="15.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Position:" />
+        <ComboBox fx:id="position">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="14.0" layoutY="81.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Button id="" mnemonicParsing="false" onAction="#openSec" text="Load secondary image" />
+        <ImageView fx:id="sec" fitHeight="135.25" fitWidth="180.33333333333331" pickOnBounds="true" preserveRatio="true">
+          <HBox.margin>
+            <Insets left="5.0" />
+          </HBox.margin>
+        </ImageView>
+        <TextField fx:id="path" prefWidth="108.0" />
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="14.0" layoutY="36.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Gamma:" />
+        <TextField fx:id="gamma" prefWidth="64.0" />
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

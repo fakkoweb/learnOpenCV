@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="GUIelements" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox fx:id="control" layoutX="6.0" layoutY="22.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Kernel Type:">
+          <font>
+            <Font name="System Bold" size="12.0" fx:id="x1" />
+          </font>
+        </Label>
+        <ChoiceBox fx:id="kernelType">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <tooltip>
+            <Tooltip text="Kernel shape." />
+          </tooltip>
+        </ChoiceBox>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="240.0" layoutY="22.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label font="$x1" prefWidth="-1.0" text="Kernel width:" />
+        <ChoiceBox fx:id="kernelWidth" prefWidth="-1.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <tooltip>
+            <Tooltip text="Kernel widht" />
+          </tooltip>
+        </ChoiceBox>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="6.0" layoutY="65.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label font="$x1" prefWidth="-1.0" text="Kernel height:" />
+        <ChoiceBox fx:id="kernelHeight" prefWidth="-1.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <tooltip>
+            <Tooltip text="Kernel height" />
+          </tooltip>
+        </ChoiceBox>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="187.0" layoutY="65.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Anchor x:" />
+        <TextField fx:id="anchorX" prefWidth="66.0">
+          <tooltip>
+            <Tooltip text="position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center." />
+          </tooltip>
+        </TextField>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="10.0" layoutY="111.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Anchor y:" />
+        <TextField fx:id="anchorY" prefWidth="66.0">
+          <tooltip>
+            <Tooltip text="position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center." />
+          </tooltip>
+        </TextField>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="174.0" layoutY="111.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Iterations:" />
+        <TextField fx:id="iterations" prefWidth="66.0">
+          <tooltip>
+            <Tooltip text="number of times erosion is applied." />
+          </tooltip>
+        </TextField>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

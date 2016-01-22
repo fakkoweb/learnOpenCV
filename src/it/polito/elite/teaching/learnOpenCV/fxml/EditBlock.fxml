@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <center>
+    <SplitPane dividerPositions="0.25440313111545987, 0.700587084148728" focusTraversable="true" prefHeight="160.0" prefWidth="200.0">
+      <items>
+        <GridPane fx:id="functionList">
+          <children>
+            <ListView fx:id="function" maxWidth="400.0" prefHeight="200.0" prefWidth="250.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <children>
+                <ListView fx:id="libraries" maxWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <ListView fx:id="algorithms" maxWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <Label text="Libraries" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                  <font>
+                    <Font name="System Bold" size="12.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <Label font="$x1" text="Algorithms" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="240.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="382.0" minHeight="10.0" prefHeight="262.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="574.0" minHeight="10.0" prefHeight="504.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane fx:id="center" maxWidth="500.0" minWidth="450.0">
+          <children>
+            <TextArea fx:id="description" prefWidth="200.0" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <HBox id="HBox" alignment="CENTER" padding="$x2" spacing="5.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+              <children>
+                <AnchorPane fx:id="control" prefHeight="200.0" prefWidth="200.0">
+                  <padding>
+                    <Insets fx:id="x2" />
+                  </padding>
+                </AnchorPane>
+              </children>
+            </HBox>
+            <TextArea fx:id="blockCode" prefWidth="200.0" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Label fx:id="showError" text="" GridPane.columnIndex="0" GridPane.rowIndex="4">
+              <font>
+                <Font name="System Bold" size="15.0" />
+              </font>
+            </Label>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="298.0" minHeight="10.0" percentHeight="39.14373088685014" prefHeight="218.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="325.0" minHeight="10.0" percentHeight="4.185233726518122" prefHeight="306.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="325.0" minHeight="10.0" percentHeight="29.829619921363054" prefHeight="306.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="268.0" minHeight="10.0" percentHeight="3.2852774137177874" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="268.0" minHeight="10.0" percentHeight="3.4163390126692947" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="268.0" minHeight="10.0" percentHeight="20.532983835736125" prefHeight="195.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane fx:id="view">
+          <children>
+            <GridPane id="controlButtons" GridPane.columnIndex="0" GridPane.rowIndex="1">
+              <children>
+                <Button id="open" mnemonicParsing="false" onAction="#openImg" text="Open" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP" />
+                <Button fx:id="save" disable="true" mnemonicParsing="false" onAction="#saveImg" text="Save" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+                <Button fx:id="elaborate" mnemonicParsing="false" onAction="#preview" prefHeight="35.0" prefWidth="86.0" text="Elaborate" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <font>
+                    <Font size="13.0" fx:id="x3" />
+                  </font>
+                </Button>
+                <Button fx:id="add" font="$x3" mnemonicParsing="false" onAction="#addBlock" prefHeight="35.0" prefWidth="86.0" text="Add" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <children>
+                <ImageView fx:id="source" fitHeight="169.5" fitWidth="226.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <GridPane GridPane.columnIndex="0" GridPane.rowIndex="2">
+              <children>
+                <ImageView fx:id="processed" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="276.0" minHeight="10.0" percentHeight="40.0" prefHeight="276.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="346.0" minHeight="10.0" percentHeight="20.0" prefHeight="202.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="288.0" minHeight="10.0" percentHeight="40.0" prefHeight="288.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </items>
+    </SplitPane>
+  </center>
+</BorderPane>

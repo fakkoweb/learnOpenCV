@@ -1,0 +1,14 @@
+Laplacian
+
+Calculates the Laplacian of an image.
+
+The function calculates the Laplacian of the source image by adding up 
+the second x and y derivatives calculated using the Sobel operator:
+
+dst = Delta src = (d^2 src)/(dx^2) + (d^2 src)/(dy^2)
+
+This is done when ksize > 1. When ksize == 1, 
+the Laplacian is computed by filtering the image with the following 3 x 3 aperture:
+
+vecthreethree 0101(-4)1010
+

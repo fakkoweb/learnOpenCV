@@ -1,0 +1,16 @@
+Adaptive Threshold
+
+Applies an adaptive threshold to an array.
+The function transforms a grayscale image to a binary image according to the formulae:
+THRESH_BINARY 
+dst(x,y) = maxValue if src(x,y) > T(x,y); 0 otherwise
+THRESH_BINARY_INV 
+dst(x,y) = 0 if src(x,y) > T(x,y); maxValue otherwise
+
+where T(x,y) is a threshold calculated individually for each pixel.
+For the method ADAPTIVE_THRESH_MEAN_C, the threshold value T(x,y) is a mean of the 
+blockSize x blockSize neighborhood of (x, y) minus C. 
+For the method ADAPTIVE_THRESH_GAUSSIAN_C, the threshold value T(x, y) 
+is a weighted sum (cross-correlation with a Gaussian window) of the blockSize x blockSize 
+neighborhood of (x, y) minus C. The default sigma (standard deviation) is used for the 
+specified blockSize. The function can process the image in-place

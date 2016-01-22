@@ -1,0 +1,3 @@
+int dim[] = {3,5,7};
+
+Imgproc.medianBlur(<! INPUT>,<! OUTPUT >,dim[<! kSize>]);

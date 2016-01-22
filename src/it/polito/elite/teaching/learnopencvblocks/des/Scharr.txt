@@ -1,0 +1,13 @@
+Scharr
+
+Calculates the first x- or y- image derivative using Scharr operator.
+
+The function computes the first x- or y- spatial image derivative using the Scharr operator. 
+The call
+
+Scharr(src, dst, ddepth, dx, dy, scale, delta, borderType)
+
+is equivalent to
+
+Sobel(src, dst, ddepth, dx, dy, CV_SCHARR, scale, delta, borderType).
+

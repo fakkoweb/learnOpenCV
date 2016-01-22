@@ -1,0 +1,13 @@
+Erode
+
+Erodes an image by using a specific structuring element.
+
+The function erodes the source image using the specified structuring element 
+that determines the shape of a pixel neighborhood over which the minimum is taken:
+
+dst(x,y) = min _((x',y'): element(x',y') != 0) src(x+x',y+y')
+
+The function supports the in-place mode. 
+Erosion can be applied several (iterations) times. 
+In case of multi-channel images, each channel is processed independently.
+

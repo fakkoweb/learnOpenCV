@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="GUIelements" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox fx:id="control" layoutX="6.0" layoutY="55.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label prefWidth="-1.0" text="SigmaX:">
+          <font>
+            <Font name="System Bold" size="12.0" fx:id="x1" />
+          </font>
+          <labelFor>
+            <TextField fx:id="sigmax" prefWidth="66.0">
+              <tooltip>
+                <Tooltip text="Gaussian kernel standard deviation in X direction." />
+              </tooltip>
+            </TextField>
+          </labelFor>
+        </Label>
+        <fx:reference source="sigmax" />
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="144.0" layoutY="55.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label prefWidth="-1.0" text="SigmaY:">
+          <labelFor>
+            <TextField fx:id="sigmay" prefWidth="66.0">
+              <tooltip>
+                <Tooltip text="Gaussian kernel standard deviation in Y direction; if sigmaY is zero, it is set to be equal to sigmaX, if both sigmas are zeros, they are computed from ksize.width and ksize.height, respectively " />
+              </tooltip>
+            </TextField>
+          </labelFor>
+        </Label>
+        <fx:reference source="sigmay" />
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="6.0" layoutY="98.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label font="$x1" prefWidth="-1.0" text="Kernel width:">
+          <labelFor>
+            <ChoiceBox  fx:id="ksizew" prefWidth="45.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+              <tooltip>
+                <Tooltip text=" Gaussian kernel size. ksize.width and ksize.height can differ but they both must be positive and odd. Or, they can be zero's and then they are computed from sigma*." />
+              </tooltip>
+            </ChoiceBox>
+          </labelFor>
+        </Label>
+        <fx:reference source="ksizew" />
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="141.0" layoutY="98.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label font="$x1" prefWidth="-1.0" text="Kernel height:">
+          <labelFor>
+            <ChoiceBox fx:id="ksizeh" prefWidth="45.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+              <tooltip>
+                <Tooltip text=" Gaussian kernel size. ksize.width and ksize.height can differ but they both must be positive and odd. Or, they can be zero's and then they are computed from sigma*." />
+              </tooltip>
+            </ChoiceBox>
+          </labelFor>
+        </Label>
+        <fx:reference source="ksizeh" />
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

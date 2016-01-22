@@ -1,0 +1,5 @@
+Gaussian Blur
+
+Blurs an image using a Gaussian filter.
+The function convolves the source image with the specified Gaussian kernel. 
+In-place filtering is supported.

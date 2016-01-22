@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?background-color 0xffca99ff?>
+
+<AnchorPane id="AnchorPane" fx:id="GUIelements" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox fx:id="control" layoutX="13.0" layoutY="36.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Ddepht:">
+          <font>
+            <Font name="System Bold" size="12.0" fx:id="x1" />
+          </font>
+        </Label>
+        <ChoiceBox fx:id="ddepth">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <tooltip>
+            <Tooltip text="output image depth " />
+          </tooltip>
+        </ChoiceBox>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="164.0" layoutY="36.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label font="$x1" text="Direction:" />
+        <ChoiceBox fx:id="dxdy" prefWidth="66.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <tooltip>
+            <Tooltip text="order of the derivative " />
+          </tooltip>
+        </ChoiceBox>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="14.0" layoutY="83.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Scale:" />
+        <TextField fx:id="scale" prefWidth="66.0">
+          <tooltip>
+            <Tooltip text="optional scale factor for the computed derivative values; by default, no scaling is applied " />
+          </tooltip>
+        </TextField>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="133.0" layoutY="83.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Delta:" />
+        <TextField fx:id="delta" prefWidth="66.0">
+          <tooltip>
+            <Tooltip text="optional delta value that is added to the results prior to storing them in dst." />
+          </tooltip>
+        </TextField>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

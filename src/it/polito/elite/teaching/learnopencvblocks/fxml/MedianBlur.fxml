@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="GUIelements" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox fx:id="control" layoutX="14.0" layoutY="65.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Ksize:">
+          <font>
+            <Font name="System Bold" size="12.0" />
+          </font>
+        </Label>
+        <ChoiceBox fx:id="kSize">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <tooltip>
+            <Tooltip text="aperture linear size; it must be odd and greater than 1, for example: 3, 5, 7..." />
+          </tooltip>
+        </ChoiceBox>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

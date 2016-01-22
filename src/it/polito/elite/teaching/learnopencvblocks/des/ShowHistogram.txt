@@ -1,0 +1,5 @@
+CalcHistogram
+
+Calculates a histogram of a set of arrays.
+
+The functions calcHist calculate the histogram of one or more arrays. The elements of a tuple used to increment a histogram bin are taken from the correspondinginput arrays at the same location.

@@ -1,0 +1,6 @@
+
+Mat secondary=new Mat();  
+
+secondary=Highgui.imread("<! path >");
+
+Core.absdiff(<! INPUT>, secondary, <! OUTPUT>);

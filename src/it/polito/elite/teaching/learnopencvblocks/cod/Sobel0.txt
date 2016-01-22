@@ -1,0 +1,5 @@
+int depth[]= { CvType.CV_16S, CvType.CV_32F, CvType.CV_64F };
+
+int size[]={ 1, 3, 5, 7};
+
+imgProc.Sobel( <! INPUT>,<! OUTPUT >,depth[<!ddepth>],Math.abs(<! dxdy >),Math.abs(<!dxdy> -1));

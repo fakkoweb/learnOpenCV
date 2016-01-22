@@ -1,0 +1,6 @@
+
+int size[] = { 3, 5, 7 };
+	
+int multip[] = {3,4,5,6};
+
+Imgproc.Canny(<! INPUT>, <! OUTPUT>, <! thresh1>, multip[<! thresh2>]*<! thresh1>);

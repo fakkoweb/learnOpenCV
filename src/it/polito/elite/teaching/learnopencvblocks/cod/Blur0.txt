@@ -1,0 +1,7 @@
+int height[]={3,5,7};
+	
+int width[]={3,5,7};
+
+<! OUTPUT>=new Mat();
+
+Imgproc.blur(<! INPUT>, <! OUTPUT>, new Size(height[<!kernelHeight>],width[ <!kernelWidth>]));

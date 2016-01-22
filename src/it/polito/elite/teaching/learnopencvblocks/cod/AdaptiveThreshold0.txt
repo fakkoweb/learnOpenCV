@@ -1,0 +1,13 @@
+int methods[] = { Imgproc.ADAPTIVE_THRESH_MEAN_C,Imgproc.ADAPTIVE_THRESH_GAUSSIAN_C };
+
+int threshType[] = { Imgproc.THRESH_BINARY, Imgproc.THRESH_BINARY_INV };
+	
+int size[]={3,5,7};
+
+<! OUTPUT >=new Mat();
+
+Mat inputGrey = new Mat(<! INPUT>.width(), <! INPUT>.height(), CvType.CV_8UC1);
+
+Imgproc.cvtColor(<! INPUT>, inputGrey, Imgproc.COLOR_BGR2GRAY);
+
+Imgproc.adaptiveThreshold(inputGrey, <! OUTPUT >, <! maxValue >,methods[<! adaptiveMethod>], threshType[<! thresholdType >], size[<! blockSize >], Double.parseDouble(<! c >));

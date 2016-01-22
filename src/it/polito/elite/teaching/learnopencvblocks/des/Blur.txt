@@ -1,0 +1,11 @@
+Blur
+
+Blurs an image using the normalized box filter.
+
+The function smoothes an image using the kernel:
+
+K = 1/(ksize.width*ksize.height) 1 1 1 *s 1 1 1 1 1 *s 1 1.................. 1 1 1 *s 1 1 
+
+The call blur(src, dst, ksize, anchor, borderType) is equivalent to
+boxFilter(src, dst, src.type(), anchor, true, borderType).
+

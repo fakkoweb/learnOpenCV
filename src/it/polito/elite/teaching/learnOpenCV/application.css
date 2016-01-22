@@ -1,0 +1,147 @@
+.back  { -fx-background-color: #0066CC; }
+
+.back2 {-fx-background-color: silver; }
+
+.grassetto  { -fx-font-weight: bold; }
+
+
+.split-pane:horizontal > * > .split-pane-divider {
+   -fx-border-color:  transparent;
+   -fx-background-color: linear-gradient(to right, #757575 0%, #000000 100%);
+   -fx-background-insets: 0;
+}
+
+.split-pane:vertical > * > .split-pane-divider {
+   -fx-border-color:  transparent;
+   -fx-background-color: transparent;
+   -fx-background-insets: 0;
+}
+
+/* linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%); */
+
+
+#blocksPipeView {
+	-fx-background-color:
+		linear-gradient(to bottom, #000000 0%, #373837 1.5%, #202020 98.5%, #000000 100%);
+}
+
+#functionList{
+	-fx-background-color:
+		linear-gradient(to right, #000000 0%, #AACFEF 50%);
+	
+}
+
+#view{
+	-fx-background-color:
+		linear-gradient(to left, #000000 0%, #AACFEF 100%);
+	
+}
+#center{
+	-fx-background-color:
+		linear-gradient(to bottom, #000000 0%, #AACFEF 100%);
+
+	
+}
+
+#blocksPipeView .list-cell:filled:selected:focused, #blocksPipeView .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#e4d47c 0%, #fcfbf4 3%, #f4eeca 51%, #e6d886 95%, #ddcb57 100%);
+    -fx-text-fill: black;
+}
+
+#blocksPipeView .list-cell:filled {
+    -fx-background-color: linear-gradient(#a7a7a7 0%, #f7f7f7 3%, #dbdbdb 51%, #aeaeae 95%, #8f8f8f 100%);
+}
+
+#blocksPipeView .list-cell:filled:hover {
+    -fx-background-color: linear-gradient(#818181 0%, #bebebe 3%, #a9a9a9 51%, #868686 95%, #6e6e6e 100%);
+}
+#blocksPipeView .list-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-width: 0px;
+}
+
+
+.activeLabel {
+	-fx-text-fill: black;
+}
+
+#control {
+	-fx-alignment: center;
+}
+
+#controlButtons{
+	 -fx-background-image: url("img/streetworks.png");
+    -fx-background-repeat: repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-color:transparent;
+    -fx-border-color: #2e8b57;
+	
+}
+
+.pipeEdges {
+    -fx-background-image: url("img/streetworks.png");
+    -fx-background-repeat: repeat;
+    -fx-background-position: 50% 50%;
+    -fx-background-color:transparent;
+    -fx-border-color: #2e8b57;
+}
+
+.leftPanelTop {
+    -fx-background-image: url("img/loadimagearrowstop.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-color:transparent;
+}
+.leftPanelCenter {
+    -fx-background-image: url("img/white.png");
+    -fx-background-repeat: repeat;
+    -fx-background-color:transparent;
+}
+.leftPanelBottom {
+    -fx-background-image: url("img/loadimagearrowsbottom.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-color:transparent;
+}
+
+
+.blackButton{
+	-fx-background-color: 
+        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%),
+        linear-gradient(#8a8a8a 0%, #6b6a6b 20%, #343534 80%, #262626 100%),
+        linear-gradient(#777777 0%, #606060 50%, #505250 51%, #2a2b2a 100%);    
+	-fx-text-fill: white;
+	-fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);
+}
+
+.redButton{
+	-fx-background-color: 
+        linear-gradient(#442222 0%, #200E0E 25%, #2D1716 75%, #4C2626 100%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(#FF5D55 0%, #FF281C 20%, #BF4640 80%, #A61109 100%),
+        linear-gradient(#FF281C 0%, #6b6a6b 20%, #343534 80%, #262626 100%),
+        linear-gradient(#FF281C 0%, #FF281C 50%, #A61109 51%, #A61109 100%);    
+	-fx-text-fill: white;
+	-fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);
+}
+
+.greenButton{
+	-fx-background-color: 
+        linear-gradient(#5A5A5A 0%, #0B190B 25%, #132512 75%, #636363 100%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(#63E63A 0%, #32CE00 20%, #429A27 80%, #208600 100%),
+        linear-gradient(#32CE00 0%, #6b6a6b 20%, #343534 80%, #262626 100%),
+        linear-gradient(#32CE00 0%, #32CE00 50%, #208600 51%, #208600 100%);    
+	-fx-text-fill: white;
+	-fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);
+}
+
+.greenButton Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 0, 0.0 , 0 , 1);
+    }
+
+
+
+.deleteBlock{
+	
+}

@@ -1,0 +1,5 @@
+int height[]={3,5,7};
+	
+int width[]={3,5,7};
+
+Imgproc.GaussianBlur(<! INPUT>,<! OUTPUT >, new Size(width[<! ksizew >],height[<! ksizeh >]), Integer.parseInt(<! sigmax >),Integer.parseInt(<! sigmay >));

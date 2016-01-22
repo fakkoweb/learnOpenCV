@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="blockGUI" alignment="CENTER_LEFT" gridLinesVisible="false" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox minWidth="-1.0" prefHeight="100.0" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <children>
+        <VBox alignment="CENTER" prefHeight="-1.0" prefWidth="28.0" HBox.margin="$x1">
+          <children>
+            <CheckBox fx:id="blockActiveFlag" alignment="TOP_CENTER" allowIndeterminate="false" disable="false" ellipsisString="" indeterminate="false" mnemonicParsing="false" prefWidth="18.0" selected="true" text="" textAlignment="LEFT" textOverrun="ELLIPSIS" underline="false" wrapText="false">
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </CheckBox>
+            <Label alignment="TOP_CENTER" styleClass="activeLabel" text="Active" textAlignment="LEFT">
+              <font>
+                <Font size="10.0" />
+              </font>
+            </Label>
+          </children>
+        </VBox>
+        <Separator orientation="VERTICAL" prefHeight="-1.0">
+          <HBox.margin>
+            <Insets right="3.0" />
+          </HBox.margin>
+        </Separator>
+        <VBox alignment="TOP_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="2.0">
+          <children>
+            <HBox alignment="TOP_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <Label fx:id="blockNumber" alignment="TOP_CENTER" styleClass="activeLabel" text="1" textAlignment="LEFT">
+                  <font>
+                    <Font size="11.0" />
+                  </font>
+                  <HBox.margin>
+                    <Insets right="3.0" />
+                  </HBox.margin>
+                </Label>
+                <Circle fx:id="checkLed" fill="radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center -1.0px -1.0px, radius 10.0px, 0x808080ff 0.0%, 0x000000ff 100.0%)" radius="6.0" stroke="BLACK" strokeType="INSIDE">
+                  <HBox.margin>
+                    <Insets right="4.0" top="2.0" />
+                  </HBox.margin>
+                </Circle>
+                <Label fx:id="blockName" alignment="CENTER_LEFT" contentDisplay="LEFT" disable="false" focusTraversable="false" graphicTextGap="4.0" labelFor="$blockName" text="NomeFunzione" textFill="#10cc00" underline="false" visible="true">
+                  <font>
+                    <Font size="12.0" fx:id="x2" />
+                  </font>
+                  <HBox.margin>
+                    <Insets fx:id="x1" />
+                  </HBox.margin>
+                </Label>
+              </children>
+              <VBox.margin>
+                <Insets left="1.0" top="3.0" />
+              </VBox.margin>
+            </HBox>
+            <HBox fx:id="blockSpecificGUI" alignment="TOP_CENTER" disable="false" prefHeight="-1.0" prefWidth="-1.0" spacing="2.0" visible="false">
+              <children>
+                <Label alignment="CENTER_LEFT" contentDisplay="LEFT" disable="false" focusTraversable="false" font="$x2" text="No controls set" textFill="#bfbfbf" underline="false" visible="true" />
+              </children>
+            </HBox>
+          </children>
+          <HBox.margin>
+            <Insets fx:id="x1" />
+          </HBox.margin>
+        </VBox>
+      </children>
+      <GridPane.margin>
+        <Insets right="3.0" />
+      </GridPane.margin>
+    </HBox>
+    <GridPane alignment="CENTER" hgap="1.0" minHeight="52.0" prefHeight="-1.0" vgap="1.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="0" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+      <children>
+        <Button id="buttonF" fx:id="buttonH" alignment="CENTER" cancelButton="false" contentDisplay="CENTER" defaultButton="false" disable="true" graphicTextGap="0.0" minHeight="-1.0" minWidth="32.0" mnemonicParsing="false" onAction="#showHistogram" prefHeight="-1.0" prefWidth="-1.0" text="H" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <font>
+            <Font size="13.0" fx:id="x3" />
+          </font>
+        </Button>
+        <Button alignment="CENTER" cancelButton="false" contentDisplay="CENTER" defaultButton="false" graphicTextGap="0.0" minHeight="-1.0" minWidth="-1.0" mnemonicParsing="false" onAction="#deleteBlock" prefHeight="-1.0" prefWidth="-1.0" styleClass="redButton" text="X" textAlignment="CENTER" textFill="BLACK" underline="false" GridPane.columnIndex="2" GridPane.rowIndex="0">
+          <font>
+            <Font name="System Bold" size="11.0" />
+          </font>
+          <GridPane.margin>
+            <Insets right="-4.0" top="-8.0" />
+          </GridPane.margin>
+        </Button>
+        <Button fx:id="buttonF" alignment="CENTER" cancelButton="false" contentDisplay="CENTER" defaultButton="false" disable="true" font="$x3" graphicTextGap="0.0" minHeight="-1.0" minWidth="32.0" mnemonicParsing="false" onAction="#showFourier" prefHeight="-1.0" prefWidth="-1.0" text="F" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="-1.0" prefWidth="-1.0" />
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="-1.0" prefWidth="-1.0" />
+        <ColumnConstraints halignment="CENTER" />
+      </columnConstraints>
+      <padding>
+        <Insets bottom="2.0" left="2.0" right="2.0" top="1.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints minHeight="23.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="23.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="-1.0" prefWidth="-1.0" />
+    <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints fillHeight="false" minHeight="-1.0" prefHeight="50.0" valignment="TOP" vgrow="SOMETIMES" />
+  </rowConstraints>
+</GridPane>

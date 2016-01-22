@@ -1,0 +1,9 @@
+int kType[] = { Imgproc.MORPH_RECT, Imgproc.MORPH_CROSS, Imgproc.MORPH_ELLIPSE };
+
+int height[]={3,5,7};
+	
+int width[]={3,5,7};
+
+Mat kernel = Imgproc.getStructuringElement(kType[<!kernelType>], new Size(width[<!kernelWidth>],height[ <!kernelHeight>]));
+
+Imgproc.dilate(<! INPUT>, <! OUTPUT>, kernel, new Point(Integer.parseInt(<!anchorX>),Integer.parseInt(<!anchorY>)),Integer.parseInt(<!iterations>));

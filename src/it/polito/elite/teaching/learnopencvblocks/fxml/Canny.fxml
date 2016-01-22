@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="GUIelements" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox fx:id="control" layoutX="225.0" layoutY="21.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="Threshold2:">
+          <font>
+            <Font name="System Bold" size="12.0" fx:id="x1" />
+          </font>
+        </Label>
+        <ChoiceBox fx:id="thresh2" prefWidth="45.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <tooltip>
+            <Tooltip text="second threshold for the hysteresis procedure." />
+          </tooltip>
+        </ChoiceBox>
+        <Label text="X Threshold1" />
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="14.0" layoutY="66.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label text="ApertureSize:" />
+        <ChoiceBox fx:id="apertureSize" prefWidth="59.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <tooltip>
+            <Tooltip text=" aperture size for the &quot;Sobel&quot; operator." />
+          </tooltip>
+        </ChoiceBox>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="244.0" layoutY="66.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <CheckBox fx:id="l2Gradient" mnemonicParsing="false" text="L2Gradient">
+          <tooltip>
+            <Tooltip text=" a flag, indicating whether a more accurate L_2 norm =sqrt((dI/dx)^2 + (dI/dy)^2) should be used to calculate the image gradient magnitude (L2gradient=true), or whether the default L_1 norm =|dI/dx|+|dI/dy| is enough (L2gradient=false)." />
+          </tooltip>
+        </CheckBox>
+      </children>
+    </HBox>
+    <HBox fx:id="control" layoutX="0.0" layoutY="-12.0" prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <AnchorPane prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <Label font="$x1" layoutX="8.0" layoutY="38.0" text="Threshold1:" />
+            <ScrollBar fx:id="thresh1" layoutX="75.0" layoutY="38.0">
+              <tooltip>
+                <Tooltip text=" first threshold for the hysteresis procedure." />
+              </tooltip>
+            </ScrollBar>
+            <Label fx:id="valueThresh1" alignment="CENTER" layoutX="100.0" layoutY="54.0" prefWidth="50.0" text="0" textAlignment="LEFT" />
+            <Label layoutX="75.0" layoutY="22.0" prefWidth="100.0" text="0               100" />
+          </children>
+        </AnchorPane>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

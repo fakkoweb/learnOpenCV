@@ -1,0 +1,21 @@
+//The secondary image is added in <! position> position
+
+Mat sum=new Mat(<! INPUT>.size(),<! INPUT>.type());
+
+<! OUTPUT >=new Mat(<! INPUT>.size(),<! INPUT>.type());
+
+<! INPUT>.copyTo(<! OUTPUT >);
+
+Mat secondary=new Mat();
+
+secondary=Highgui.imread("<! path >");
+
+Rect roi=null;
+
+roi=new Rect(<! INPUT>.width()-secondary.width(),<! INPUT>.height()-secondary.height(),secondary.width(),secondary.height());
+
+sum=new Mat(<! OUTPUT >,roi);
+
+secondary.convertTo(secondary, <! INPUT>.type());
+
+Core.addWeighted(sum, Double.parseDouble(<! weight >), secondary, 1-Double.parseDouble(<! weight>), Double.parseDouble(<! gamma>), sum);

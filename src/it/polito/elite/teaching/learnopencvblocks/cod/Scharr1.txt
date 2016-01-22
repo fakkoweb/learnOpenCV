@@ -1,0 +1,4 @@
+
+int depth[]= { CvType.CV_16S, CvType.CV_32F, CvType.CV_64F };
+
+Imgproc.Scharr(<! INPUT>, <! OUTPUT>, depth[<! ddepth>], Math.abs(<! dxdy>), Math.abs(<! dxdy>-1),Double.parseDouble(<! scale>), Double.parseDouble(<! delta>));

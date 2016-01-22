@@ -1,0 +1,5 @@
+int depth[]= { CvType.CV_16S, CvType.CV_32F, CvType.CV_64F };
+	
+int dim[]={1,3,5,7};
+
+Imgproc.Laplacian(<! INPUT>,<! OUTPUT >, depth[<! ddepth>], dim[<! ksize>], Double.parseDouble(<! scale >), Double.parseDouble(<! delta >));

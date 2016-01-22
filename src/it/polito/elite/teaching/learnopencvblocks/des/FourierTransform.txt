@@ -1,0 +1,38 @@
+DFT
+
+Performs a forward or inverse Discrete Fourier transform of a 1D or 2D floating-point array.
+
+The function performs one of the following:
+
+Forward the Fourier transform of a 1D vector of N elements: 
+Y = F^N * X,
+
+where F^N_(jk)=exp(-2pi i j k/N) and i=sqrt(-1)
+
+Inverse the Fourier transform of a 1D vector of N elements: 
+X'= (F^N)^(-1) * Y = (F^N)^* * y X = (1/N) * X, 
+
+where F^*=(Re(F^N)-Im(F^N))^T
+
+Forward the 2D Fourier transform of a M x N matrix: 
+Y = F^M * X * F^N
+
+Inverse the 2D Fourier transform of a M x N matrix: 
+X'= (F^M)^* * Y * (F^N)^* X = 1/(M * N) * X' 
+
+In case of real (single-channel) data, the output spectrum of the forward Fourier transform or input spectrum of the inverse Fourier transform can be represented in a packed format called *CCS* (complex-conjugate-symmetrical). It was borrowed from IPL (Intel* Image Processing Library). Here is how 2D *CCS* spectrum looks:
+
+Re Y_(0,0) Re Y_(0,1) Im Y_(0,1) Re Y_(0,2) Im Y_(0,2) *s Re Y_(0,N/2-1) Im Y_(0,N/2-1) Re Y_(0,N/2) Re Y_(1,0) Re Y_(1,1) Im Y_(1,1) Re Y_(1,2) Im Y_(1,2) *s Re Y_(1,N/2-1) Im Y_(1,N/2-1) Re Y_(1,N/2) Im Y_(1,0) Re Y_(2,1) Im Y_(2,1) Re Y_(2,2) Im Y_(2,2) *s Re Y_(2,N/2-1) Im Y_(2,N/2-1) Im Y_(1,N/2)........................... Re Y_(M/2-1,0) Re Y_(M-3,1) Im Y_(M-3,1)......... Re Y_(M-3,N/2-1) Im Y_(M-3,N/2-1) Re Y_(M/2-1,N/2) Im Y_(M/2-1,0) Re Y_(M-2,1) Im Y_(M-2,1)......... Re Y_(M-2,N/2-1) Im Y_(M-2,N/2-1) Im Y_(M/2-1,N/2) Re Y_(M/2,0) Re Y_(M-1,1) Im Y_(M-1,1)......... Re Y_(M-1,N/2-1) Im Y_(M-1,N/2-1) Re Y_(M/2,N/2) 
+
+In case of 1D transform of a real vector, the output looks like the first row of the matrix above.
+
+So, the function chooses an operation mode depending on the flags and size of the input array:
+
+If DFT_ROWS is set or the input array has a single row or single column, the function performs a 1D forward or inverse transform of each row of a matrix when DFT_ROWS is set. Otherwise, it performs a 2D transform. 
+If the input array is real and DFT_INVERSE is not set, the function performs a forward 1D or 2D transform: 
+When DFT_COMPLEX_OUTPUT is set, the output is a complex matrix of the same size as input. 
+When DFT_COMPLEX_OUTPUT is not set, the output is a real matrix of the same size as input. In case of 2D transform, it uses the packed format as shown above. In case of a single 1D transform, it looks like the first row of the matrix above. In case of multiple 1D transforms (when using the DCT_ROWS flag), each row of the output matrix looks like the first row of the matrix above. 
+If the input array is complex and either DFT_INVERSE or DFT_REAL_OUTPUT are not set, the output is a complex array of the same size as input. The function performs a forward or inverse 1D or 2D transform of the whole input array or each row of the input array independently, depending on the flags DFT_INVERSE and DFT_ROWS. 
+When DFT_INVERSE is set and the input array is real, or it is complex but DFT_REAL_OUTPUT is set, the output is a real array of the same size as input. The function performs a 1D or 2D inverse transformation of the whole input array or each individual row, depending on the flags DFT_INVERSE and DFT_ROWS. 
+If DFT_SCALE is set, the scaling is done after the transformation.
+

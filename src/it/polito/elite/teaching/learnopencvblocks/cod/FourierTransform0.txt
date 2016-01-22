@@ -1,0 +1,56 @@
+Imgproc.cvtColor(input, input, Imgproc.COLOR_BGR2GRAY);
+		// init
+		Mat padded = new Mat();
+		// get the optimal rows size for dft
+		int addPixelRows = Core.getOptimalDFTSize(<! INPUT>.rows());
+		// get the optimal cols size for dft
+		int addPixelCols = Core.getOptimalDFTSize(<! INPUT>.cols());
+		// apply the optimal cols and rows size to the image
+		Imgproc.copyMakeBorder(<! INPUT>, padded, 0, addPixelRows - <! INPUT>.rows(),
+				0, addPixelCols - <! INPUT>.cols(), Imgproc.BORDER_CONSTANT,
+				Scalar.all(0));
+
+		padded.convertTo(padded, CvType.CV_32F);
+		this.planes.add(padded);
+		this.planes.add(Mat.zeros(padded.size(), CvType.CV_32F));
+		// prepare a complex image for performing the dft
+		Core.merge(this.planes, this.complexImage);
+		// dft
+		// complexImage.convertTo(complexImage, CvType.CV_64FC2);
+		Core.dft(this.complexImage, this.complexImage);
+
+		List<Mat> newPlanes = new ArrayList<>();
+
+		//The <! OUTPUT> matrix
+		Mat mag = new Mat();
+
+		// split the comples image in two planes
+		Core.split(complexImage, newPlanes);
+		// compute the magnitude
+		Core.magnitude(newPlanes.get(0), newPlanes.get(1), mag);
+
+		// move to a logarithmic scale
+		Core.add(mag, Scalar.all(1), mag);
+		Core.log(mag, mag);
+
+		mag = mag.submat(new Rect(0, 0, mag.cols() & -2, mag.rows() & -2));
+		int cx = mag.cols() / 2;
+		int cy = mag.rows() / 2;
+
+		Mat q0 = new Mat(mag, new Rect(0, 0, cx, cy));
+		Mat q1 = new Mat(mag, new Rect(cx, 0, cx, cy));
+		Mat q2 = new Mat(mag, new Rect(0, cy, cx, cy));
+		Mat q3 = new Mat(mag, new Rect(cx, cy, cx, cy));
+
+		Mat tmp = new Mat();
+		q0.copyTo(tmp);
+		q3.copyTo(q0);
+		tmp.copyTo(q3);
+
+		q1.copyTo(tmp);
+		q2.copyTo(q1);
+		tmp.copyTo(q2);
+
+		Core.normalize(mag, mag, 0, 255, Core.NORM_MINMAX);
+		planes = new ArrayList<>();
+		return mag;

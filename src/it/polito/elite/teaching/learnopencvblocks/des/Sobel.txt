@@ -1,0 +1,20 @@
+Sobel
+
+Calculates the first, second, third, or mixed image derivatives using an extended Sobel operator.
+In all cases except one, the ksize x<BR>ksize separable kernel is used to calculate the derivative. 
+When ksize = 1, the 3 x 1 or 1 x 3 kernel is used (that is, no Gaussian smoothing is done). 
+ksize = 1 can only be used for the first or the second x- or y- derivatives.
+There is also the special value ksize = CV_SCHARR (-1) that corresponds to the 3x3 Scharr 
+filter that may give more accurate results than the 3x3 Sobel. The Scharr aperture is
+|-3 0 3| |-10 0 10| |-3 0 3| 
+for the x-derivative, or transposed for the y-derivative.
+The function calculates an image derivative by convolving the image with the appropriate kernel:
+
+dst = (d^(xorder+yorder) src)/(dx^(xorder) dy^(yorder))
+
+The Sobel operators combine Gaussian smoothing and differentiation, so the result is 
+more or less resistant to the noise. 
+Most often, the function is called with (xorder = 1, yorder = 0, ksize = 3) or 
+(xorder = 0, yorder = 1, ksize = 3) to calculate the first x- or y- image derivative. 
+
+

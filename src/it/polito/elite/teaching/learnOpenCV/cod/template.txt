@@ -1,0 +1,27 @@
+package Bartolotta;
+
+import org.opencv.core.*;
+import org.opencv.imgproc.*;
+
+public class Facchini
+{
+    private Mat inputMat = null;
+    private Mat outputMat = null;
+    private Mat <!INPUT> = null;
+    private Mat <!OUTPUT> = null;
+    
+    public Mat elaborate (Mat input)
+    {
+	outputMat = null;
+	inputMat = input;
+        <!INPUT> = inputMat;
+
+        <!CALLS>
+
+    	//Note: it makes perfectly sense to make output null, it means some error occurred
+	outputMat = <!OUTPUT>;
+        return outputMat;
+    }
+      
+    <!FUNCTIONS>
+}

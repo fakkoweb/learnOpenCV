@@ -1,0 +1,3 @@
+int conversion[]= { Imgproc.COLOR_BGR2GRAY, Imgproc.COLOR_BGR2YCrCb, Imgproc.COLOR_BGR2HSV };
+
+Imgproc.cvtColor(<! INPUT>,<! OUTPUT >, conversion[<!cvtCode >]);
